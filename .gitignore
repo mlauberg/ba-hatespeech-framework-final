@@ -1,0 +1,78 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environments
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Poetry
+poetry.lock
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Data & Results (NICHT committen)
+data/*.csv
+data/*.json
+data/*.txt
+data/raw/*.csv
+results/
+*.log
+*.json
+experiments/
+
+# OS-spezifische Dateien
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+
+# Grafiken & Diagramme (für Abgabe nicht relevant)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+*.dot
+*.svg
+
+# Temporäre Dateien
+*.tmp
+*.bak
+*.cache

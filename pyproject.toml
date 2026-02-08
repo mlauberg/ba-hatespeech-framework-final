@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "ba-hatespeech-framework-final"
+version = "1.0.0"
+description = "Iterative Prompt Optimization for German Hate Speech Detection - Bachelor Thesis"
+authors = ["Maximilian Lauberger <lauberge@hm.edu>"]
+readme = "README.md"
+license = "MIT"
+keywords = ["hate-speech", "prompt-optimization", "nlp", "llm", "bachelor-thesis"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Programming Language :: Python :: 3.12",
+]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+# Kernabhängigkeiten für Datenverarbeitung und Metriken
+pandas = "^2.2.0"           # Datenverarbeitung
+numpy = "^1.26.0"           # Numerische Operationen
+scikit-learn = "^1.4.0"     # Metriken (F2, MCC, Precision, Recall)
+tqdm = "^4.66.0"            # Progress Bar für Iterationen
+scipy = "^1.12.0"           # Statistische Tests (McNemar)
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+optimize = "main:main"

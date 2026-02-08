@@ -1,10 +1,10 @@
 # Iterative Prompt Optimization for Hate Speech Detection
 
-Begleitcode zur Bachelorarbeit **"Iterative Promptoptimierung zur Klassifikation von Hassrede"** (2025).
+Begleitcode zur Bachelorarbeit **"Iterative Promptoptimierung zur Klassifikation von Hassrede"** (2026).
 
 ---
 
-## 📖 Überblick
+## Überblick
 
 Dieses Framework implementiert einen **automatisierten Feedback-Zyklus** zur Optimierung von System-Prompts für Large Language Models (LLMs) im Kontext der deutschsprachigen Hate Speech Detection.
 
@@ -31,7 +31,7 @@ Das Framework arbeitet in **3 Phasen**:
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Voraussetzungen
 
@@ -65,13 +65,13 @@ poetry shell
 # Ollama muss laufen (separates Terminal)
 ollama serve
 
-# Modell herunterladen (einmalig, ~15 GB)
-ollama pull gemma2:27b
+# Modell herunterladen (einmalig, ~16 GB)
+ollama pull gemma3:27b
 ```
 
 ---
 
-## 📊 Verwendung
+## Verwendung
 
 ### 1. Datensatz vorbereiten
 
@@ -84,6 +84,7 @@ data/
 ```
 
 **Erforderliche Spalten:**
+
 - `text`: Textinhalt
 - `label`: Binäres Label (0 = NOT-HS, 1 = HS)
 
@@ -108,6 +109,7 @@ poetry run python main.py
 ```
 
 **Ausgabe während der Ausführung:**
+
 - Progress Bar für jede Iteration
 - Metriken nach jedem Zyklus (F1, F2, MCC, S-Score)
 - ETA (geschätzte Restlaufzeit)
@@ -123,7 +125,7 @@ Nach Abschluss finden Sie im Ordner `results/`:
 
 ---
 
-## 📈 Metriken
+## Metriken
 
 Das Framework verwendet eine **kombinierte Zielfunktion** (S-Score):
 
@@ -136,6 +138,7 @@ Das Framework verwendet eine **kombinierte Zielfunktion** (S-Score):
   → Robustheit bei Klassenungleichgewicht
 
 **Zusätzlich berechnet:**
+
 - F1-Score
 - Accuracy
 - Precision
@@ -143,7 +146,7 @@ Das Framework verwendet eine **kombinierte Zielfunktion** (S-Score):
 
 ---
 
-## 🏗️ Projektstruktur
+## Projektstruktur
 
 ```
 ba-hatespeech-framework-final/
@@ -168,13 +171,14 @@ ba-hatespeech-framework-final/
 
 ---
 
-## 🔬 Wissenschaftlicher Hintergrund
+## Wissenschaftlicher Hintergrund
 
 ### Kernidee: Error-Driven Meta-Prompting
 
 Anstatt Prompts manuell zu optimieren, analysiert ein **Meta-LLM** (derselbe Gemma 3 27B) die Fehler einer Iteration und generiert **synthetische Few-Shot-Beispiele**, um die Entscheidungsgrenze zu schärfen.
 
 **Stateless-Design:**
+
 - Der Optimizer hat **keinen Zugriff** auf die Historie
 - Jede Iteration basiert nur auf: `aktueller Prompt + aktuelle Fehler`
 - Verhindert "Prompt Bloat" durch unkontrolliertes Anhängen
@@ -188,16 +192,16 @@ Anstatt Prompts manuell zu optimieren, analysiert ein **Meta-LLM** (derselbe Gem
 
 ---
 
-## 📝 Zitation
+## Zitation
 
 Falls Sie diese Arbeit in Ihrer Forschung verwenden:
 
 ```bibtex
-@thesis{lauberger2025,
+@thesis{lauberger2026,
   author = {Maximilian Lauberger},
   title = {Iterative Promptoptimierung zur Klassifikation von Hassrede},
   school = {Hochschule München, Fakultät für Informatik und Mathematik},
-  year = {2025},
+  year = {2026},
   type = {Bachelor's Thesis},
   url = {https://github.com/mlauberg/ba-hatespeech-framework-final}
 }
@@ -205,7 +209,7 @@ Falls Sie diese Arbeit in Ihrer Forschung verwenden:
 
 ---
 
-## 🛠️ Technische Details
+## Technische Details
 
 ### Hardware-Anforderungen
 
@@ -223,33 +227,35 @@ Falls Sie diese Arbeit in Ihrer Forschung verwenden:
 
 ---
 
-## 🤝 Beitragen
+## Beitragen
 
 Dieses Repository dient primär der **Reproduzierbarkeit** der Bachelorarbeit.
 Für Fragen oder Anregungen:
 
 - **Autor**: Maximilian Lauberger
 - **E-Mail**: lauberge@hm.edu
-- **Betreuer**: Prof. Dr. Peter Mandl (Hochschule München)
+- **Prüfer**: Prof. Dr. Peter Mandl (Hochschule München)
+- **Betreuer**: Jan Vellmer (M.Sc.)
 
 ---
 
-## 📄 Lizenz
+## Lizenz
 
 MIT License - Siehe [LICENSE](LICENSE) für Details.
 
 ---
 
-## 🙏 Danksagung
+## Danksagung
 
 Dank an:
-- Prof. Dr. Peter Mandl für die wissenschaftliche Betreuung
+
+- Prof. Dr. Peter Mandl und Jan Vellmer (M.Sc.) für die wissenschaftliche Betreuung
 - Die Entwickler von Ollama und Google Gemma für die Open-Source-Modelle
 - Die Ersteller der Datensätze gutefrage.net und HOCON34k
 
 ---
 
-## 🔗 Weiterführende Links
+## Weiterführende Links
 
 - [Ollama Documentation](https://github.com/ollama/ollama)
 - [Google Gemma Models](https://ai.google.dev/gemma)

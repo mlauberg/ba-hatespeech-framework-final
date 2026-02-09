@@ -15,7 +15,7 @@ from typing import Dict, Any
 
 from openai import OpenAI
 
-MODEL_NAME: str = "gemma3:4b-it-qat" #gemma3:27b, gemma3:4b-it-qat
+MODEL_NAME: str = "gemma3:27b"
 
 client = OpenAI(
     base_url="http://localhost:11434/v1",

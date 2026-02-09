@@ -74,8 +74,8 @@ logging.basicConfig(
 # Experimental Configuration
 DATA_FILE: str = "data/raw/gutefrage.csv"
 DATASET_TYPE: str = "gutefrage"  # Options: 'gutefrage' or 'hocon'
-SAMPLE_SIZE: int = 10
-MAX_ITERATIONS: int = 2
+SAMPLE_SIZE: int = 100
+MAX_ITERATIONS: int = 100
 MAX_ERRORS_TO_ANALYZE: int = 10
 
 INITIAL_PROMPT: str = """You are a content moderator evaluating German text for hate speech.

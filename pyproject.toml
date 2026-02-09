@@ -21,6 +21,8 @@ numpy = "^1.26.0"           # Numerische Operationen
 scikit-learn = "^1.4.0"     # Metriken (F2, MCC, Precision, Recall)
 tqdm = "^4.66.0"            # Progress Bar für Iterationen
 scipy = "^1.12.0"           # Statistische Tests (McNemar)
+matplotlib = "^3.8.0"       # Visualisierung der Ergebnisse
+openai = "^1.0.0"           # OpenAI-API Client für Ollama
 
 [build-system]
 requires = ["poetry-core"]
